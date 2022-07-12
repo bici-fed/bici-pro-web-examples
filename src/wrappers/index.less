@@ -14,7 +14,7 @@ html,body{
 .@{bici-admin-prefix}-tabs{
   height: 40px;
   background-color: #fff;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
   .@{ant-prefix}-tabs-tab{
     border: none!important;
     background: transparent!important;
@@ -56,14 +56,21 @@ html,body{
     //max-width: 200px;
     //min-width: 200px;
     width: 200px;
+    display: flex;
+    justify-content: space-around;
     background: #002140;
+    align-items: center;
     transition: width .3s cubic-bezier(.2,0,0,1) 0s,flex .3s cubic-bezier(.2,0,0,1) 0s;
+
     img{
       width: 30px;
-      height: 30px;
+      height: 21px;
     }
+
     span{
       color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }
@@ -72,6 +79,7 @@ html,body{
   .@{bici-admin-prefix}-logo{
     width: 48px;
     flex: 0 0 48px;
+
     span{
       display: none;
     }
@@ -88,21 +96,6 @@ html,body{
 
 }
 
-.@{bici-admin-prefix}-app{
-  .ant-layout-sider-collapsed{
-    flex: 0 0 48px!important;
-    max-width: 48px!important;
-    min-width: 48px!important;
-    width: 48px!important;
-  }
-  .ant-layout-sider-trigger{
-    width: 48px!important;
-  }
-  .@{ant-prefix}-tabs-card > .@{ant-prefix}-tabs-nav .@{ant-prefix}-tabs-ink-bar,
-  .@{ant-prefix}-tabs-card > div > .@{ant-prefix}-tabs-nav .@{ant-prefix}-tabs-ink-bar {
-    visibility: initial;
-  }
-}
 .@{bici-admin-prefix}-header-navs {
   display: flex;
   flex-direction: row;
@@ -125,6 +118,7 @@ html,body{
       background-color: #efefef;
     }
   }
+
   ul {
     padding: 0;
     list-style: none;
@@ -151,4 +145,48 @@ html,body{
   .@{bici-admin-prefix}-header{
     display: none;
   }
+}
+
+.@{bici-admin-prefix}-global-nav{
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  .@{bici-admin-prefix}-menu-item-text{
+    padding-left: 10px;
+    flex: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.@{bici-admin-prefix}-global-nav:hover{
+  color: #eee;
+}
+// -app专门添加作为覆盖样式的
+.@{bici-admin-prefix}-app{
+  .@{ant-prefix}-empty-normal{
+    margin: 0;
+  }
+
+  .ant-layout-sider-collapsed{
+    flex: 0 0 48px!important;
+    max-width: 48px!important;
+    min-width: 48px!important;
+    width: 48px!important;
+  }
+
+  .ant-layout-sider-trigger{
+    width: 48px!important;
+  }
+  .@{ant-prefix}-tabs-card > .@{ant-prefix}-tabs-nav .@{ant-prefix}-tabs-ink-bar,
+  .@{ant-prefix}-tabs-card > div > .@{ant-prefix}-tabs-nav .@{ant-prefix}-tabs-ink-bar {
+    visibility: initial;
+  }
+}
+.@{ant-prefix}-popover-arrow{
+  top: 68px!important;
 }

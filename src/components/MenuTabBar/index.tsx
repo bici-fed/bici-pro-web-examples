@@ -177,7 +177,7 @@ const MenuTabBar=({tabs,user,onContentChange,isFull}: any)=>{
      */
     const remove = (targetKey: string) => {
 
-        let newActiveKey = activeKey;
+        let newActiveKey = targetKey;
         let lastIndex = -1;
         panes.forEach((pane, i) => {
             if (pane.id == targetKey) {
@@ -185,19 +185,21 @@ const MenuTabBar=({tabs,user,onContentChange,isFull}: any)=>{
             }
         });
         const newPanes = panes.filter(pane => pane.id != targetKey);
-        if (newPanes.length && newActiveKey === targetKey) {
-            if (lastIndex >= 0) {
+        if (newPanes.length && newActiveKey == targetKey) {
+            if (lastIndex > 0) {
                 newActiveKey = newPanes[lastIndex].id;
             } else {
                 newActiveKey = newPanes[0].id;
             }
+        } else{
+            newActiveKey = "-1";// 默认首页
         }
-        setPanes(newPanes);
         setActiveKey(newActiveKey);
         openMenuPage(user, history, newActiveKey);
         user.removeTabMenu(targetKey);
         user.removeTabMenu(parseInt(targetKey));
         user.setActiveMenu(newActiveKey+'');
+
     };
     /**
      * 关闭标签页

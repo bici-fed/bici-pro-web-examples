@@ -42,7 +42,7 @@ export default [
                     {
                         name: '用户管理',
                         path: 'user',
-                        component: '@/pages/docs',
+                        component: '@/pages/features/system/pages/user',
                     },
                     {
                         name: '菜单管理',
@@ -57,7 +57,7 @@ export default [
                     {
                         name: '字典管理',
                         path: 'dictionary',
-                        component: './index',
+                        component: '@/pages/features/system/pages/dictionary',
                     },
                 ]
             },

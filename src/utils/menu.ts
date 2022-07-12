@@ -72,3 +72,24 @@ export function generateBreadcrumb(menus,keyPath) {
     console.log('a>>>>', a);
     return a;
 }
+
+/**
+ * 深度遍历tree，并返回所有匹配的项
+ * @param tree
+ * @param id
+ */
+export function deepQuery(tree:any,id:string|null) {
+    const retNode:any[] = [];
+    function deepSearch(tree:any,id:string){
+        for(let i = 0; i<tree.length; i++) {
+            if(tree[i].children && tree[i].children.length>0) {
+                deepSearch(tree[i].children,id);
+            }
+            if(tree[i].label.indexOf(id)!=-1) {
+                retNode.push(tree[i]);
+            }
+        }
+    }
+    deepSearch(tree,id);
+    return retNode;
+}

@@ -3,8 +3,9 @@ import type { ActionType, ProColumns } from '@bicitech-design/pro-components';
 import { ProTable, TableDropdown } from '@bicitech-design/pro-components';
 import { Button, Dropdown, Menu, Space, Tag, notification } from 'antd';
 import { useRef } from 'react';
-import { KeepAlive, useActivate, useUnactivate } from 'react-activation'
+import { useActivate, useUnactivate } from 'react-activation'
 import {http} from '@/utils/http'
+import Card from "@/components/Card";
 
 // import request from 'umi-request';
 import { inject, observer } from 'mobx-react';
@@ -176,20 +177,20 @@ const ComplexTable = (props: any) => {
 
     }
 
-    const Card = (prop: any) => (
-        <div style={{ boxSizing: 'border-box', border: '1px solid #ccc' }}>
-            <div>Index: {prop.index}</div>
-            <pre>ID: {prop.id}</pre>
-            <div>Column width: {prop.width}</div>
-            <div>Column other: {prop.other}</div>
-        </div>
-    );
+    // const Card = (prop: any) => (
+    //     <div style={{ boxSizing: 'border-box', border: '1px solid #ccc' }}>
+    //         <div>Index: {prop.index}</div>
+    //         <pre>ID: {prop.id}</pre>
+    //         <div>Column width: {prop.width}</div>
+    //         <div>Column other: {prop.other}</div>
+    //     </div>
+    // );
     const onDragFinished = (source: any, target: any) => {
         console.log('业务处理毁掉函数');
     };
 
     return (
-        <div>
+        <div style={{padding: 10}}>
             <div>{props.counter.count}</div>
             <div>{JSON.stringify(props.user.openTabMenus)}</div>
             <BrickWall
@@ -287,11 +288,5 @@ const ComplexTable = (props: any) => {
 
 
 const MobxComp = inject('counter','user')(observer(ComplexTable));
-
-const KeepAliceComp = (props: any)=>{
-    return (<KeepAlive name="/system/role" saveScrollPosition="screen">
-        <MobxComp {...props}/>
-    </KeepAlive>);
-}
 
 export default MobxComp;

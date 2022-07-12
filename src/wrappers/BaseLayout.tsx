@@ -9,6 +9,7 @@ import {
     UserOutlined,
     DoubleLeftOutlined,
     DoubleRightOutlined,
+    SendOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     HomeOutlined,
@@ -18,7 +19,19 @@ import {
     LogoutOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, Tabs, Button, Avatar, Badge, Image,  Dropdown, Space} from 'antd';
+import {
+    Breadcrumb,
+    Layout,
+    Menu,
+    Tabs,
+    Button,
+    Avatar,
+    Badge,
+    Image,
+    Dropdown,
+    Space,
+    Popover,
+} from 'antd';
 import './index.less';
 import MenuTabBar from "@/components/MenuTabBar";
 import classnames from 'classnames';
@@ -28,6 +41,8 @@ import {inject, observer} from "mobx-react";
 import {generateBreadcrumb, toTree} from "@/utils/menu";
 import ProgressProvider from '@/components/ProgressBar'
 import KeepAlive from "react-activation";
+import GlobalNavigation from "@/components/GlobalNavigation";
+import LOGO from '@/assets/logo.svg';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -125,14 +140,20 @@ function BaseLayout(props: any) {
         props.user.setActiveMenu('-1');
         history.push('/home');
     }
-
+    const content = (
+        <div>
+            <p>Content</p>
+            <p>Content</p>
+        </div>
+    );
 
     return (
+        <>
         <Layout style={{ height: '100vh' }} className={appClass} >
             <Header className={`${BICI_ADMIN_PREFIX}-header`}>
                 <div className={`${BICI_ADMIN_PREFIX}-logo`}>
-                    <img src=""/>
-                    <span>BICI模版项目</span>
+                    <img src={LOGO}/>
+                    <span>BICI Design Pro</span>
                 </div>
                 <div className={`${BICI_ADMIN_PREFIX}-header-navs`}>
                     <div className={`${BICI_ADMIN_PREFIX}-header-tools`}>
@@ -173,6 +194,12 @@ function BaseLayout(props: any) {
             </Header>
             <Layout className="site-layout">
                 <Sider className={`${BICI_ADMIN_PREFIX}-sidebar`} collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} trigger={null}>
+                    <Popover placement="right" title={null} content={<GlobalNavigation menuData={menus}/>} trigger="click">
+                        <div className={`${BICI_ADMIN_PREFIX}-global-nav`}>
+                            <SendOutlined  style={{transform: 'rotate(-45deg) translateY(8px)', transformOrigin:'top', paddingLeft: collapsed?8:16}}/>
+                            <span className={`${BICI_ADMIN_PREFIX}-menu-item-text`} style={{display: collapsed?'none':'initial'}}>全局导航</span>
+                        </div>
+                    </Popover>
                     <Menu theme="dark"
                           selectedKeys={openKeys}
                           defaultOpenKeys={openKeys}
@@ -207,6 +234,7 @@ function BaseLayout(props: any) {
                 </Content>
             </Layout>
         </Layout>
+        </>
     );
 }
 
