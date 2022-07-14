@@ -1,0 +1,17 @@
+@monitor-card-prefix: monitor;
+
+.@{monitor-card-prefix}-card{
+  min-width: 100px;
+  display: flex;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  flex-direction: column;
+
+  &-header{
+    height: 48px;
+  }
+
+  &-footer{
+    height: 48px;
+    border-top: 1px solid #52c41a;
+  }
+}

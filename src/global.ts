@@ -1,5 +1,4 @@
 console.log('global.ts');
-import { configurePersistable } from 'mobx-persist-store';
 
 // // All properties are optional
 // configurePersistable(
@@ -12,3 +11,10 @@ import { configurePersistable } from 'mobx-persist-store';
 //     },
 //     { delay: 200, fireImmediately: false }
 // );
+window.addEventListener('load', function () {
+  console.log('===load');
+});
+
+window.addEventListener('resize', function () {
+  console.log('===resixe');
+});

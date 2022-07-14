@@ -462,23 +462,23 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@bici-wui/antx@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.1.tgz#c7afffe2259d166fcf65103f222148d2a21789c0"
-  integrity sha512-OELfvLNhaZYqCR6X55hs+dmvOSXrKjJlOPFg3M3j1K5ovH+4sGn4M3IyOoZJOFfdyHA4Z/ndZE69EcjnA+5Tcg==
+"@bici-wui/antx@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.4.tgz#867542d914da0faee46e8f7a3c934e116f17d5a9"
+  integrity sha512-7RsKtUB4TQOq2pwdiNPR7YSHGx4mAqvCnrVLFmRARU+cVLjDp/A12ejKC0dRAdV8fWnJcCQ6iMcpLzfORd3EAg==
   dependencies:
     "@babel/runtime" "^7.18.3"
-    "@bici-wui/utils" "^1.0.1"
+    "@bici-wui/utils" "^1.0.2"
     lodash "^4.17.21"
     masonic "^3.6.5"
     react-dnd "^16.0.1"
     react-dnd-html5-backend "^16.0.1"
     react-draggable "^4.4.5"
 
-"@bici-wui/utils@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@bici-wui/utils/-/utils-1.0.1.tgz#b65a207b662309419dd5a7b8daf050d5f410f7f3"
-  integrity sha512-+kw3Z87oXalI5j3v8CPUaC4YsqkQyx+Z3I4xPnkGJhaWTLl5Mx+o+SAkLBBhqD9mHDVPgMOYLZEivXZ1viOPsA==
+"@bici-wui/utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@bici-wui/utils/-/utils-1.0.2.tgz#ca4cdf67e6e223806f6b864fd87d0e8700f68051"
+  integrity sha512-AiZ/yNQHBRTJizjNYXVFHKefGYLwqN3cNNQ/A0a4c8BF8nk13IVHRuZ6MpRx30+4KiH8O+6NgXIQSa386CznsA==
   dependencies:
     "@babel/runtime" "^7.18.3"
 
@@ -1253,7 +1253,7 @@
   dependencies:
     "@react-hook/latest" "^1.0.2"
 
-"@react-hook/event@^1.2.1", "@react-hook/event@^1.2.3":
+"@react-hook/event@^1.2.1", "@react-hook/event@^1.2.3", "@react-hook/event@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@react-hook/event/-/event-1.2.6.tgz#52f91578add934acc1203328ca09ab14fc7ee58e"
   integrity sha512-JUL5IluaOdn5w5Afpe/puPa1rj8X6udMlQ9dt4hvMuKmTrBS1Ya6sb4sVgvfe2eU4yDuOfAhik8xhbcCekbg9Q==
@@ -5728,6 +5728,17 @@ mini-create-react-context@^0.4.0:
     "@babel/runtime" "^7.12.1"
     tiny-warning "^1.0.3"
 
+mini-virtual-list@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/mini-virtual-list/-/mini-virtual-list-0.3.2.tgz#256f0d83d8883ff4abff9674f14aee387e70021c"
+  integrity sha512-NWTgjGenrnaabzTxaeYIzwovXe5V8g/GWmFGA0rP2fecPsuWz4E8UYx4qmOCeA2m+qrDHhpDlBryclGOdzwj2g==
+  dependencies:
+    "@essentials/memoize-one" "^1.1.0"
+    "@essentials/request-timeout" "^1.3.0"
+    "@react-hook/event" "^1.2.6"
+    "@react-hook/passive-layout-effect" "^1.2.1"
+    "@react-hook/throttle" "^2.2.0"
+
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
@@ -7285,6 +7296,13 @@ react-resizable@^3.0.4:
   dependencies:
     prop-types "15.x"
     react-draggable "^4.0.3"
+
+react-resize-detector@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-7.1.2.tgz#8ef975dd8c3d56f9a5160ac382ef7136dcd2d86c"
+  integrity sha512-zXnPJ2m8+6oq9Nn8zsep/orts9vQv3elrpA+R8XTcW7DVVUJ9vwDwMXaBtykAYjMnkCIaOoK9vObyR7ZgFNlOw==
+  dependencies:
+    lodash "^4.17.21"
 
 react-router-dom@5.2.0:
   version "5.2.0"
