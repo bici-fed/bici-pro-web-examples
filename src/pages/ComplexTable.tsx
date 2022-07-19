@@ -12,6 +12,7 @@ import { useActivate, useUnactivate } from 'react-activation';
 let i = 0;
 const items = Array.from(Array(10), () => ({ id: i++, name: 'jufeng' }));
 
+import ContentCardBody from '@/layouts/ContentCardBody';
 import '@bicitech-design/pro-table/dist/table.css';
 
 type GithubIssueItem = {
@@ -179,114 +180,116 @@ const ComplexTable = (props: any) => {
   };
 
   return (
-    <div style={{ padding: 10 }}>
-      <div>{props.counter.count}</div>
-      <div>{JSON.stringify(props.user.openTabMenus)}</div>
-      <BrickWall
-        items={items}
-        draggable={true}
-        columnGutter={20}
-        rowGutter={20}
-        columnWidth={280}
-        onDragFinished={onDragFinished}
-        renderItem={() => <Card />}
-      />
-      <div>
-        <Empty type="associatedCockpit">
-          <Button>关联驾驶舱</Button>
-        </Empty>
-      </div>
-      <ProTable<GithubIssueItem>
-        columns={columns}
-        actionRef={actionRef}
-        cardBordered
-        request={async (params = {}, sort, filter) => {
-          console.log('发请求了吗');
-          return http({
-            url: 'https://proapi.azurewebsites.net/github/issues',
-            method: 'get',
-            data: params,
-            withCredentials: true,
-            quiet: true,
-            interceptors: {
-              requestInterceptors: config => {
-                console.log('单个拦截器');
-                return config;
+    <ContentCardBody>
+      <div style={{ padding: 10 }}>
+        <div>{props.counter.count}</div>
+        <div>{JSON.stringify(props.user.openTabMenus)}</div>
+        <BrickWall
+          items={items}
+          draggable={true}
+          columnGutter={20}
+          rowGutter={20}
+          columnWidth={280}
+          onDragFinished={onDragFinished}
+          renderItem={() => <Card />}
+        />
+        <div>
+          <Empty type="associatedCockpit">
+            <Button>关联驾驶舱</Button>
+          </Empty>
+        </div>
+        <ProTable<GithubIssueItem>
+          columns={columns}
+          actionRef={actionRef}
+          cardBordered
+          request={async (params = {}, sort, filter) => {
+            console.log('发请求了吗');
+            return http({
+              url: 'https://proapi.azurewebsites.net/github/issues',
+              method: 'get',
+              data: params,
+              withCredentials: true,
+              quiet: true,
+              interceptors: {
+                requestInterceptors: config => {
+                  console.log('单个拦截器');
+                  return config;
+                }
               }
+            });
+          }}
+          editable={{
+            type: 'multiple'
+          }}
+          columnsState={{
+            persistenceKey: 'pro-table-singe-demos',
+            persistenceType: 'localStorage',
+            onChange(value) {
+              console.log('value: ', value);
             }
-          });
-        }}
-        editable={{
-          type: 'multiple'
-        }}
-        columnsState={{
-          persistenceKey: 'pro-table-singe-demos',
-          persistenceType: 'localStorage',
-          onChange(value) {
-            console.log('value: ', value);
-          }
-        }}
-        defaultRowExpandableConfig={{
-          columnCount: 2,
-          rowExpandable: record => true,
-          mode: 'all'
-        }}
-        rowPreviewMode="row"
-        rowKey="id"
-        search={{
-          labelWidth: 'auto'
-        }}
-        form={{
-          // 由于配置了 transform，提交的参与与定义的不同这里需要转化一下
-          syncToUrl: (values, type) => {
-            if (type === 'get') {
-              return {
-                ...values,
-                created_at: [values.startTime, values.endTime]
-              };
+          }}
+          defaultRowExpandableConfig={{
+            columnCount: 2,
+            rowExpandable: record => true,
+            mode: 'all'
+          }}
+          rowPreviewMode="row"
+          rowKey="id"
+          search={{
+            labelWidth: 'auto'
+          }}
+          form={{
+            // 由于配置了 transform，提交的参与与定义的不同这里需要转化一下
+            syncToUrl: (values, type) => {
+              if (type === 'get') {
+                return {
+                  ...values,
+                  created_at: [values.startTime, values.endTime]
+                };
+              }
+              return values;
             }
-            return values;
-          }
-        }}
-        pagination={{
-          pageSize: 5,
-          onChange: page => console.log(page)
-        }}
-        dateFormatter="string"
-        headerTitle="高级表格"
-        toolBarRender={() => [
-          <Button
-            key="button"
-            icon={<PlusOutlined />}
-            type="primary"
-            onClick={modifyName}
-          >
-            改名字
-          </Button>,
-          <Button
-            key="button"
-            icon={<PlusOutlined />}
-            type="primary"
-            onClick={handleAddTodo}
-          >
-            新建Todo
-          </Button>,
-          <Button
-            key="button"
-            icon={<PlusOutlined />}
-            type="primary"
-            onClick={handleAddTodoAsync}
-          >
-            一步新建Todo
-          </Button>,
-          <Dropdown key="menu" overlay={menu}>
-            <Button>
-              <EllipsisOutlined />
-            </Button>
-          </Dropdown>
-        ]}
-      />
-    </div>
+          }}
+          pagination={{
+            pageSize: 5,
+            onChange: page => console.log(page)
+          }}
+          dateFormatter="string"
+          headerTitle="高级表格"
+          toolBarRender={() => [
+            <Button
+              key="button"
+              icon={<PlusOutlined />}
+              type="primary"
+              onClick={modifyName}
+            >
+              改名字
+            </Button>,
+            <Button
+              key="button"
+              icon={<PlusOutlined />}
+              type="primary"
+              onClick={handleAddTodo}
+            >
+              新建Todo
+            </Button>,
+            <Button
+              key="button"
+              icon={<PlusOutlined />}
+              type="primary"
+              onClick={handleAddTodoAsync}
+            >
+              一步新建Todo
+            </Button>,
+            <Dropdown key="menu" overlay={menu}>
+              <Button>
+                <EllipsisOutlined />
+              </Button>
+            </Dropdown>
+          ]}
+        />
+      </div>
+    </ContentCardBody>
   );
 };
 

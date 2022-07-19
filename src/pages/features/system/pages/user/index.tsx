@@ -1,3 +1,4 @@
+import ContentCardBody from '@/layouts/ContentCardBody';
 import DeptTree from '@/pages/features/system/pages/user/DeptTree';
 import UserTable from '@/pages/features/system/pages/user/UserTable';
 import { MehOutlined } from '@ant-design/icons';
@@ -79,7 +80,7 @@ const UserManagePage = () => {
   );
 
   return (
-    <div>
+    <ContentCardBody>
       <ProCard split="vertical" gutter={16}>
         <ProCard
           title={DeptCardHeader}
@@ -99,7 +100,7 @@ const UserManagePage = () => {
           <UserTable />
         </ProCard>
       </ProCard>
-    </div>
+    </ContentCardBody>
   );
 };
 export default UserManagePage;

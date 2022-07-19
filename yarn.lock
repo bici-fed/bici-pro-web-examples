@@ -462,10 +462,10 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@bici-wui/antx@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.4.tgz#867542d914da0faee46e8f7a3c934e116f17d5a9"
-  integrity sha512-7RsKtUB4TQOq2pwdiNPR7YSHGx4mAqvCnrVLFmRARU+cVLjDp/A12ejKC0dRAdV8fWnJcCQ6iMcpLzfORd3EAg==
+"@bici-wui/antx@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.5.tgz#9c1f0a7a4428826894e9cfb8a16fa6b68459aa48"
+  integrity sha512-U59mThQopIFcm+197N7LYJovM/kfZX0nlsdyeWf9hKn74SEAAiXgBf30WTDOpIcQwWjpbZRPsB9q33cnOCqW4w==
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@bici-wui/utils" "^1.0.2"
@@ -1125,7 +1125,7 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
   integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
-"@loadable/component@5.15.2":
+"@loadable/component@5.15.2", "@loadable/component@^5.15.2":
   version "5.15.2"
   resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.15.2.tgz#b6c418d592e0a64f16b1d614ca9d3b1443d3b498"
   integrity sha512-ryFAZOX5P2vFkUdzaAtTG88IGnr9qxSdvLRvJySXcUA4B4xVWurUNADu3AnKPksxOZajljqTrDEDcYjeL4lvLw==

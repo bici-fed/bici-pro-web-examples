@@ -1,5 +1,7 @@
+import loadable from '@loadable/component';
+import { toJS } from 'mobx';
 import { Provider } from 'mobx-react';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { AliveScope, NodeKey } from 'react-activation';
 import { history } from 'umi';
 import { queryCurrentUser } from './features/system/apis/account';
@@ -120,8 +122,40 @@ export function patchRoutes({ routes, routeComponents }: any) {
  * 注：如需动态更新路由，建议使用 patchClientRoutes() ，否则你可能需要同时修改 routes 和 routeComponents。
  * @param routes
  */
-export function patchClientRoutes({ routes }: any) {
-  console.log('patchClientRoutes', routes, Array.isArray(routes));
+
+export function patchClientRoutes({ routes, ...rest }: any) {
+  console.log('rest>>>', rest);
+  console.log('hello', PAGE_PATHS);
+
+  toJS(stores.user.authorities).forEach((menu: any) => {
+    if (menu.component && menu.path) {
+      if (PAGE_PATHS.includes(menu.component)) {
+        const AsyncPage = loadable(() => import(`@/pages/${menu.component}`), {
+          fallback: <div>loadding</div>
+        });
+        console.log('AsyncPage>>>', AsyncPage);
+        const Com = (
+          <Suspense
+            fallback={
+              <div style={{ fontSize: 32, color: 'red' }}>Loading...</div>
+            }
+          >
+            <AsyncPage />
+          </Suspense>
+        );
+        const newRoute = {
+          path: menu.path,
+          exact: true,
+          element: Com,
+          layout: false,
+          file: '@/wrappers/BaseLayout.tsx',
+          parentId: '@@/global-layout'
+        };
+        routes[1].routes[0].children.unshift(newRoute);
+        routes[1].routes[0].routes.unshift(newRoute);
+      }
+    }
+  });
 }
 
 export function onRouteChange(opts: any) {
@@ -136,9 +170,15 @@ export function onRouteChange(opts: any) {
         name: menu.title,
         closeable: true
       });
+      // 更改页面标题
+      document.title = `BICI Design Pro - ${menu.title}`;
       // 解决了pro-table删选表单有时不展示的bug
       // const myEvent = new Event('resize');
       // window.dispatchEvent(myEvent);
     }
   }
 }
+
+// export function addFoo() {
+//   console.log('addFoo');
+// }

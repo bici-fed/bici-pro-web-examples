@@ -55,8 +55,10 @@ function BaseLayout(props: any) {
 
   const { width, height, ref } = useResizeDetector({
     onResize: () => {
-      const myEvent = new Event('resize');
-      window.dispatchEvent(myEvent);
+      // setTimeout(() => {
+      //   const myEvent = new Event('resize');
+      //   window.dispatchEvent(myEvent);
+      // }, 100);
     }
   });
 
@@ -267,17 +269,15 @@ function BaseLayout(props: any) {
               }}
             />
             <div className={`${BICI_ADMIN_PREFIX}-content`} ref={ref}>
-              <div className={`${BICI_ADMIN_PREFIX}-card`}>
-                <KeepAlive
-                  cacheKey={location.pathname}
-                  name={location.pathname}
-                  saveScrollPosition="screen"
-                >
-                  <ProgressProvider>
-                    <Outlet />
-                  </ProgressProvider>
-                </KeepAlive>
-              </div>
+              <KeepAlive
+                cacheKey={location.pathname}
+                name={location.pathname}
+                saveScrollPosition="screen"
+              >
+                <ProgressProvider>
+                  <Outlet />
+                </ProgressProvider>
+              </KeepAlive>
             </div>
           </Content>
         </Layout>

@@ -28,7 +28,7 @@ const ProgressProvider = (props: any) => {
       <TransitionGroup>
         <CSSTransition
           classNames="fade"
-          key={location.pathname + '__'}
+          key={location.key}
           onEnter={() => {
             setIsLoading(true);
           }}
