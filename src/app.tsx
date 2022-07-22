@@ -4,7 +4,6 @@ import { Provider } from 'mobx-react';
 import React, { Suspense } from 'react';
 import { AliveScope, NodeKey } from 'react-activation';
 import { history } from 'umi';
-import { queryCurrentUser } from './features/system/apis/account';
 import stores from './stores';
 
 // 最大tab菜单个数
@@ -60,31 +59,18 @@ export async function getInitialState(): Promise<{
   loading?: boolean;
   fetchUserInfo?: () => Promise<any | undefined>;
 }> {
-  const fetchUserInfo = async () => {
-    try {
-      const msg = await queryCurrentUser({});
-      return msg;
-    } catch (error) {
-      history.push('/login');
-    }
-    return undefined;
-  };
   // 如果是登录页面，不执行
   if (history.location.pathname !== '/login') {
-    const currentUser = await fetchUserInfo();
     fetch('/api/menu')
       .then(res => res.json())
       .then(res => {
-        stores.user.setAuthorities(res);
+        stores.user.setAuthorities(res.data);
       });
     return {
-      fetchUserInfo,
-      currentUser,
       settings: { layout: 'mix' }
     };
   }
   return {
-    fetchUserInfo,
     settings: { layout: 'mix' }
   };
 }

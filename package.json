@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@bici-wui/antx": "^1.0.5",
-    "@bicitech-design/pro-components": "^1.1.10",
-    "@bicitech-design/pro-table": "^2.76.4",
+    "@bici-wui/antx": "^1.0.6",
+    "@bicitech-design/pro-components": "^1.1.12",
+    "@bicitech-design/pro-table": "^2.76.11",
     "@loadable/component": "^5.15.2",
     "@tanem/react-nprogress": "^5.0.6",
     "@types/react-transition-group": "^4.4.5",

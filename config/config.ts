@@ -15,7 +15,7 @@ export default defineConfig({
     loading: '@/components/Loading'
   },
   changePageTitle: {
-    changeFavicon: '哈啊'
+    changeFavicon: '博智云创'
   },
   define: { FOO: 'bar' },
   routes: routes

@@ -1,5 +1,15 @@
-import { makeAutoObservable, runInAction } from 'mobx';
+import { action, makeAutoObservable } from 'mobx';
 import { makePersistable } from 'mobx-persist-store';
+
+import { configure } from 'mobx';
+
+configure({
+  enforceActions: 'never',
+  computedRequiresReaction: false,
+  reactionRequiresObservable: false,
+  observableRequiresReaction: false,
+  disableErrorBoundaries: false
+});
 
 export default class User {
   // 权限菜单数据
@@ -20,11 +30,9 @@ export default class User {
     });
   }
 
-  setAuthorities(authorities: any) {
-    runInAction(() => {
-      this.authorities = authorities;
-    });
-  }
+  setAuthorities = action((authorities: any) => {
+    this.authorities = authorities;
+  });
 
   getAuthorities() {
     return this.authorities;

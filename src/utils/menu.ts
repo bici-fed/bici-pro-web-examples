@@ -50,6 +50,42 @@ export function toTree(arr: any[], parentId: number | string) {
   return loop(parentId);
 }
 
+export function toSelectTree(arr: any[], parentId: number | string) {
+  function loop(parentId: number | string) {
+    return arr.reduce((acc, cur) => {
+      if (cur.parentId === parentId && cur.menuType === 0) {
+        cur.children = loop(cur.menuId);
+        if (cur.children.length === 0) {
+          cur.children = null;
+        }
+        acc.push({
+          title: cur.title,
+          value: cur.menuId,
+          children: cur.children
+        });
+      }
+      return acc;
+    }, []);
+  }
+  return loop(parentId);
+}
+
+export function toTableTree(arr: any[], parentId: number | string) {
+  function loop(parentId: number | string) {
+    return arr.reduce((acc, cur) => {
+      if (cur.parentId === parentId) {
+        cur.children = loop(cur.menuId);
+        if (cur.children.length === 0) {
+          cur.children = null;
+        }
+        acc.push(cur);
+      }
+      return acc;
+    }, []);
+  }
+  return loop(parentId);
+}
+
 /**
  * 打开菜单
  * @param user
@@ -89,7 +125,6 @@ export function generateBreadcrumb(menus, keyPath) {
 export function deepQuery(tree: any, search: string | null) {
   function deepSearch(tree: any, search: string | null, result: any[]) {
     if (!search) {
-      console.log('====>>aa');
       result.push(...tree);
       return result;
     }
@@ -112,6 +147,5 @@ export function deepQuery(tree: any, search: string | null) {
   }
   const result: any[] = [];
   deepSearch(tree, search, result);
-  console.log(result);
   return result;
 }

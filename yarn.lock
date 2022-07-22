@@ -462,10 +462,10 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@bici-wui/antx@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.5.tgz#9c1f0a7a4428826894e9cfb8a16fa6b68459aa48"
-  integrity sha512-U59mThQopIFcm+197N7LYJovM/kfZX0nlsdyeWf9hKn74SEAAiXgBf30WTDOpIcQwWjpbZRPsB9q33cnOCqW4w==
+"@bici-wui/antx@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@bici-wui/antx/-/antx-1.0.6.tgz#b6f4d881dad86ed96a86dc9cff7f52d0a365e4b5"
+  integrity sha512-VKttLAzCJgZVbBC7CVz22aVa1HkSu1QIPBN1IE3lZzLvT5Ir0ExoxrwBXRvUc7kO3m9UzCoLVN7ny6PLwDyuAg==
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@bici-wui/utils" "^1.0.2"
@@ -482,18 +482,6 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
 
-"@bicitech-design/pro-card@1.20.10":
-  version "1.20.10"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-card/-/pro-card-1.20.10.tgz#74385ff910268f645dd52ab0e4db5b34c0bcbc8c"
-  integrity sha512-S4SQWOZJ6jZXA0Baj6O0EJe5OHwGM08vubUKD/1s3Cw4busx2EFNE0xJ4r0W5Xwg6IXjl+RFSaXZVXXC8k6NKw==
-  dependencies:
-    "@ant-design/icons" "^4.2.1"
-    "@babel/runtime" "^7.18.0"
-    "@bicitech-design/pro-utils" "1.42.2"
-    classnames "^2.2.6"
-    omit.js "^2.0.2"
-    rc-util "^5.4.0"
-
 "@bicitech-design/pro-card@^1.20.14":
   version "1.20.14"
   resolved "https://registry.yarnpkg.com/@bicitech-design/pro-card/-/pro-card-1.20.14.tgz#f40f7a089d3b19ca3e91dd1368d13058e1189e49"
@@ -506,53 +494,36 @@
     omit.js "^2.0.2"
     rc-util "^5.4.0"
 
-"@bicitech-design/pro-components@^1.1.10":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-components/-/pro-components-1.1.10.tgz#7cf7d043872ea4bc24d25253080ee0d0b6595726"
-  integrity sha512-SB9mSTXqbTzjh0/O8UMiBx5etjdY+XewLforuRR7VSiGQseKhgoUc7UjIE01TNMaRk6esg0AfRKk4VP+TlnGKQ==
+"@bicitech-design/pro-components@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-components/-/pro-components-1.1.12.tgz#6cf65adcc2e5fc8f11a168064532058f2f5a6e94"
+  integrity sha512-FOmQGfafLQD7K63x52GQbspBMyuZtJ/iverUAr38aGHJ84dl07aTQUKv1XnizRMPINh4Fe+oIk+HzQud40PavQ==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@bicitech-design/pro-card" "^1.20.14"
-    "@bicitech-design/pro-descriptions" "^1.11.10"
+    "@bicitech-design/pro-descriptions" "^1.11.12"
     "@bicitech-design/pro-field" "^1.34.21"
-    "@bicitech-design/pro-form" "^1.69.8"
+    "@bicitech-design/pro-form" "^1.69.10"
     "@bicitech-design/pro-layout" "^6.38.13"
-    "@bicitech-design/pro-list" "^1.21.73"
+    "@bicitech-design/pro-list" "^1.21.75"
     "@bicitech-design/pro-provider" "^1.8.4"
     "@bicitech-design/pro-skeleton" "^1.0.13"
-    "@bicitech-design/pro-table" "^2.76.9"
+    "@bicitech-design/pro-table" "^2.76.11"
     "@bicitech-design/pro-utils" "^1.42.6"
     antd ">=4.0"
 
-"@bicitech-design/pro-descriptions@^1.11.10":
-  version "1.11.10"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-descriptions/-/pro-descriptions-1.11.10.tgz#cc260243ad3a7887c60024412eee8d8be1613414"
-  integrity sha512-06xRpUEG5y4TcmNhQfDJb0hB5XcxnHG+Dbx7NDDAY33SfybFfWkOPGFMTR8wx4QK8K7v3Ozud6LkGyZLu92adw==
+"@bicitech-design/pro-descriptions@^1.11.12":
+  version "1.11.12"
+  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-descriptions/-/pro-descriptions-1.11.12.tgz#7a1aa4f5eb37bcb8dcac5ce559be7b314ba7bfba"
+  integrity sha512-CKRnjv7/6vYLCFqb3H6wJElAqHKug/jnzaqGQz9mz8NBSETRtXNBXwqJAQupCAxvdbrRjdagJALPuIB7u5f4jg==
   dependencies:
     "@babel/runtime" "^7.18.0"
     "@bicitech-design/pro-field" "^1.34.21"
-    "@bicitech-design/pro-form" "^1.69.8"
+    "@bicitech-design/pro-form" "^1.69.10"
     "@bicitech-design/pro-skeleton" "^1.0.13"
     "@bicitech-design/pro-utils" "^1.42.6"
     rc-util "^5.0.6"
     use-json-comparison "^1.0.5"
-
-"@bicitech-design/pro-field@1.34.17":
-  version "1.34.17"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-field/-/pro-field-1.34.17.tgz#d1351598a446f6daf8503d1f605773be76342857"
-  integrity sha512-KjTHxXyrcMMihNEYJarp4tA/hOVI3ccge5TTqtlH5ZwqeqtbBdrZalmMuGfjLWldQfHS5nXlkzGKMn3j4iDWfA==
-  dependencies:
-    "@ant-design/icons" "^4.2.1"
-    "@babel/runtime" "^7.18.0"
-    "@bicitech-design/pro-provider" "1.8.0"
-    "@bicitech-design/pro-utils" "1.42.2"
-    "@chenshuai2144/sketch-color" "^1.0.8"
-    classnames "^2.2.6"
-    lodash.tonumber "^4.0.3"
-    moment "^2.27.0"
-    omit.js "^2.0.2"
-    rc-util "^5.4.0"
-    swr "^1.2.0"
 
 "@bicitech-design/pro-field@^1.34.21":
   version "1.34.21"
@@ -571,29 +542,10 @@
     rc-util "^5.4.0"
     swr "^1.2.0"
 
-"@bicitech-design/pro-form@1.69.4":
-  version "1.69.4"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-form/-/pro-form-1.69.4.tgz#b89419eedc4155a90e5fbffa0b4333b4e2b4a3be"
-  integrity sha512-sW/78i/LpZ4AYe/BTB1GQV6R0TFuW51Btp8VbeXJJguMopiePsnFN4D8Jhq/+hh3DJs7t2A6XZ6A6pdSo/Ihug==
-  dependencies:
-    "@ant-design/icons" "^4.2.1"
-    "@babel/runtime" "^7.18.0"
-    "@bicitech-design/pro-field" "1.34.17"
-    "@bicitech-design/pro-provider" "1.8.0"
-    "@bicitech-design/pro-utils" "1.42.2"
-    "@umijs/use-params" "^1.0.9"
-    classnames "^2.2.6"
-    lodash "^4.17.21"
-    omit.js "^2.0.2"
-    rc-resize-observer "^1.1.0"
-    rc-util "^5.0.6"
-    use-json-comparison "^1.0.5"
-    use-media-antd-query "^1.1.0"
-
-"@bicitech-design/pro-form@^1.69.8":
-  version "1.69.8"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-form/-/pro-form-1.69.8.tgz#697a4a9d22a992e721cb68bed5704f6f2f2c7fff"
-  integrity sha512-KP7rEeMfE4SK6KKUzrX3cXbF16Z0mJ9nNLUV8xgAY+91JWWyUXAlsCwjYSYMBfD6/qvRD5zqAAQSlNi84VNH5Q==
+"@bicitech-design/pro-form@^1.69.10":
+  version "1.69.10"
+  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-form/-/pro-form-1.69.10.tgz#ad2f3e6ac4412d8224913f6bad0b1ce25d1c319c"
+  integrity sha512-tkoqBQSfPYfcMeXkTAJQ7PhrQRoP8bgbKTKrYUz+t57evxhbwTijmZPZStr82kYhRWXVkufDLacMZ62w6SLmYw==
   dependencies:
     "@ant-design/icons" "^4.2.1"
     "@babel/runtime" "^7.18.0"
@@ -633,31 +585,22 @@
     use-media-antd-query "^1.1.0"
     warning "^4.0.3"
 
-"@bicitech-design/pro-list@^1.21.73":
-  version "1.21.73"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-list/-/pro-list-1.21.73.tgz#64ed090cbec3e7a7144574abddd59fdc04363e5f"
-  integrity sha512-QHb67NeeEaTYDFX7Re/qaBkUFc5Hqa71Wu+KTzEAEHJQR/M7FqCLa1kY2K2zzuhzYm5uY1CwvdB79s7pQkzIMw==
+"@bicitech-design/pro-list@^1.21.75":
+  version "1.21.75"
+  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-list/-/pro-list-1.21.75.tgz#dadcc115ae5329dd6985d035045a27c742441a3d"
+  integrity sha512-V5/uJmn5YKQv1wxHD5CKZkXKK552yV1W1OFry5rOizP1asOXIFwM3RB4FdE2E3EPq/SZY7VOXeMZrB6L3G4Q+g==
   dependencies:
     "@ant-design/icons" "^4.0.0"
     "@babel/runtime" "^7.18.0"
     "@bicitech-design/pro-card" "^1.20.14"
     "@bicitech-design/pro-field" "^1.34.21"
-    "@bicitech-design/pro-table" "^2.76.9"
+    "@bicitech-design/pro-table" "^2.76.11"
     classnames "^2.2.6"
     moment "^2.24.0"
     rc-resize-observer "^1.0.0"
     rc-util "^4.19.0"
     unstated-next "^1.1.0"
     use-media-antd-query "^1.1.0"
-
-"@bicitech-design/pro-provider@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-provider/-/pro-provider-1.8.0.tgz#9f2f1f1f179d2647e24f080779401e64f9030d1b"
-  integrity sha512-kZCWskmk0QuhxUinxUDBahg/2QyC6zRLS/qp/kvhwyWSFhwUKcTtYx5ZqiV0wBKeTc/icnaZeOi5N69XlkOdBA==
-  dependencies:
-    "@babel/runtime" "^7.18.0"
-    rc-util "^5.0.1"
-    swr "^1.2.0"
 
 "@bicitech-design/pro-provider@^1.8.4":
   version "1.8.4"
@@ -676,38 +619,16 @@
     "@babel/runtime" "^7.18.0"
     use-media-antd-query "^1.1.0"
 
-"@bicitech-design/pro-table@^2.76.4":
-  version "2.76.4"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-table/-/pro-table-2.76.4.tgz#9766abfde9902d244f49c42c656bcc05045dd7e3"
-  integrity sha512-87eiuXZlxazld1aSU18iFo/MX7Se0vzHEEgyog3VbtzVfNDTlAZ/AtYTU6rNmChy2iy9eHaQWLi6ZfwGXK0WZA==
-  dependencies:
-    "@ant-design/icons" "^4.1.0"
-    "@babel/runtime" "^7.18.0"
-    "@bicitech-design/pro-card" "1.20.10"
-    "@bicitech-design/pro-field" "1.34.17"
-    "@bicitech-design/pro-form" "1.69.4"
-    "@bicitech-design/pro-provider" "1.8.0"
-    "@bicitech-design/pro-utils" "1.42.2"
-    classnames "^2.2.6"
-    moment "^2.24.0"
-    omit.js "^2.0.2"
-    rc-util "^5.0.1"
-    react-resizable "^3.0.4"
-    react-sortable-hoc "^2.0.0"
-    unstated-next "^1.1.0"
-    use-json-comparison "^1.0.5"
-    use-media-antd-query "^1.1.0"
-
-"@bicitech-design/pro-table@^2.76.9":
-  version "2.76.9"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-table/-/pro-table-2.76.9.tgz#7341198e9fdf7a443311cc5fb9ab68c427d05d65"
-  integrity sha512-wCPawnQcvNx3Yap/a+BgFP4u7oj6I6ZaSVebhjUZyCbdkZiJ7FzosztnzQcPdB8EPx4/abXHBlUpvQbAQ6TXRg==
+"@bicitech-design/pro-table@^2.76.11":
+  version "2.76.11"
+  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-table/-/pro-table-2.76.11.tgz#1d9520c2dc343cbe34ec31ce99840e41fc3093e8"
+  integrity sha512-W6T347mZDP2HALs7cML8oUup9OQ6e15f40gZkNmD+pNiM0rI4E5ATp5ZC57mPlHPEvxjMRD3E5LX4XVLA+vb3A==
   dependencies:
     "@ant-design/icons" "^4.1.0"
     "@babel/runtime" "^7.18.0"
     "@bicitech-design/pro-card" "^1.20.14"
     "@bicitech-design/pro-field" "^1.34.21"
-    "@bicitech-design/pro-form" "^1.69.8"
+    "@bicitech-design/pro-form" "^1.69.10"
     "@bicitech-design/pro-provider" "^1.8.4"
     "@bicitech-design/pro-utils" "^1.42.6"
     classnames "^2.2.6"
@@ -719,20 +640,6 @@
     unstated-next "^1.1.0"
     use-json-comparison "^1.0.5"
     use-media-antd-query "^1.1.0"
-
-"@bicitech-design/pro-utils@1.42.2":
-  version "1.42.2"
-  resolved "https://registry.yarnpkg.com/@bicitech-design/pro-utils/-/pro-utils-1.42.2.tgz#a8c75818ca95c9d55485b1b9df2bcda92a27cefa"
-  integrity sha512-u6vRIFLqPJa0Xzh6Dw+mJ4SNCzC2S5KDlTTFLDTC94TOKrVvaWzWP5d50b85xtRLr6V5gdA76cuda5csyZS+bw==
-  dependencies:
-    "@ant-design/icons" "^4.3.0"
-    "@babel/runtime" "^7.18.0"
-    "@bicitech-design/pro-provider" "1.8.0"
-    classnames "^2.2.6"
-    moment "^2.27.0"
-    rc-util "^5.0.6"
-    react-sortable-hoc "^2.0.0"
-    swr "^1.2.0"
 
 "@bicitech-design/pro-utils@^1.42.6":
   version "1.42.6"
